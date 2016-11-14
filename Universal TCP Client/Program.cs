@@ -30,7 +30,7 @@ namespace Universal_TCP_Client
 
                     TcpClient client = new TcpClient(ip, 6789);
                     var clientStream = client.GetStream();
-                    ConnectionHandler handler = new ConnectionHandler(clientStream);
+                    ConnectionHandler handler = new ConnectionHandler(clientStream, name);
                     Thread Reshivethread = new Thread(handler.Reshive);
                     Thread Sendthread = new Thread(handler.Sendmessege);
                     Reshivethread.Start();
@@ -52,7 +52,7 @@ namespace Universal_TCP_Client
                 server.Start();
                 TcpClient serverclient = server.AcceptTcpClient();
                 Console.WriteLine("client forbundet");
-                ConnectionHandler handler = new ConnectionHandler(serverclient.GetStream());
+                ConnectionHandler handler = new ConnectionHandler(serverclient.GetStream(), name);
                 Thread Reshivethread = new Thread(handler.Reshive);
                 Thread Sendthread = new Thread(handler.Sendmessege);
                 Reshivethread.Start();
