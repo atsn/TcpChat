@@ -30,12 +30,12 @@ namespace Universal_TCP_Client
                 {
                     StreamReader clientStreamReader = new StreamReader(clientStream);
 
-                    Console.WriteLine(Name + ": " + clientStreamReader.ReadLine());
+                    Console.WriteLine(clientStreamReader.ReadLine());
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-
+                    break;
                 }
 
             }
@@ -60,7 +60,7 @@ namespace Universal_TCP_Client
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
-
+                        break;
                     }
                 }
 

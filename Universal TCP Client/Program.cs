@@ -47,8 +47,9 @@ namespace Universal_TCP_Client
 
             else if (pressedkey.Equals(ConsoleKey.D2) || pressedkey.Equals(ConsoleKey.NumPad2))
             {
-                IPAddress ip = Dns.GetHostEntry("localhost").AddressList[0];
-                TcpListener server = new TcpListener(ip, 6789);
+
+
+                TcpListener server = new TcpListener(IPAddress.Any, 6789);
                 server.Start();
                 TcpClient serverclient = server.AcceptTcpClient();
                 Console.WriteLine("client forbundet");
