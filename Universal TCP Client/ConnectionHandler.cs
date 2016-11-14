@@ -30,7 +30,7 @@ namespace Universal_TCP_Client
                 {
                     StreamReader clientStreamReader = new StreamReader(clientStream);
 
-                    Console.WriteLine(clientStreamReader.ReadLine());
+                    Console.WriteLine(Name + ": " + clientStreamReader.ReadLine());
                 }
                 catch (Exception e)
                 {
