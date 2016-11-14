@@ -27,7 +27,7 @@ namespace Universal_TCP_Client
                     string ip = Console.ReadLine();
                     string testtesttest = "messege";
                     
-                    TcpClient client = new TcpClient("192.168.3.16", 6789);
+                    TcpClient client = new TcpClient(ip, 6789);
                     var clientStream = client.GetStream();
 
                     ConnectionHandler handler = new ConnectionHandler(clientStream);
