@@ -12,10 +12,12 @@ namespace Universal_TCP_Client
     {
         private NetworkStream clientStream;
         public string messege { get; set; } = "kør";
+        public string Name { get; set; }
 
-        public ConnectionHandler(NetworkStream ClientStream)
+        public ConnectionHandler(NetworkStream ClientStream, string name)
         {
             clientStream = ClientStream;
+            Name = name;
         }
 
 
@@ -52,7 +54,7 @@ namespace Universal_TCP_Client
                         StreamWriter clientStreamWriter = new StreamWriter(clientStream);
                         clientStreamWriter.AutoFlush = true;
 
-                       messege = Console.ReadLine();
+                        messege = Name + ": " + Console.ReadLine();
                         clientStreamWriter.WriteLine(messege);
                     }
                     catch (Exception e)
