@@ -18,7 +18,7 @@ namespace Universal_TCP_Client
                 string testtesttest = "messege";
 
 
-                TcpClient client = new TcpClient("192.168.0.18", 6789);
+                TcpClient client = new TcpClient("(chage ip)", 6789);
                 var clientStream = client.GetStream();
 
                 ConnectionHandler handler = new ConnectionHandler(clientStream);
